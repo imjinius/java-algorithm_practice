@@ -26,8 +26,7 @@ public class exception {
         try {
             ex.setUserPw(pw);
         } catch (PasswordException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+           
             e.getMessage();
         }
 
@@ -35,7 +34,7 @@ public class exception {
         try {
             ex.setUserPw(pw);
         } catch (PasswordException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
             e.getMessage();
         }
@@ -44,7 +43,7 @@ public class exception {
         try {
             ex.setUserPw(pw);
         } catch (PasswordException e) {
-            // TODO Auto-generated catch block
+            
             e.printStackTrace();
             e.getMessage();
         }
