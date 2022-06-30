@@ -7,7 +7,7 @@ public class TourListAPI {
 		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8")
 				+ "=o5qKZe2j9oe7vmdAxcZZN0KcEuO3a1rxqX%2Bcb4UO4BNvR7DiZsBK47AMFktXFNWu9%2BaaPKhVoKGLksmQ2iVN3Q%3D%3D"); /*
 																														 * Service
-																														 * Key
+																													 * Key
 																														 */
 		urlBuilder.append("&" + URLEncoder.encode("resultType", "UTF-8") + "="
 				+ URLEncoder.encode("json", "UTF-8")); /* JSON방식으로 호출 시 파라미터 resultType=json 입력 */
