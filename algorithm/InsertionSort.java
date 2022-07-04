@@ -21,7 +21,7 @@ public class InsertionSort {
         for (ins = 1; ins < a.length; ins++) {
             temp = a[ins];
             for (cmp = ins - 1; cmp >= 0; cmp--) {
-                if (a[cmp] > temp) {
+                if (a[cmp] < temp) {
                     a[cmp + 1] = a[cmp];
                 } else {
                     break;
