@@ -46,9 +46,20 @@ public class LinkedList {
         System.out.println();
     }
 
+    // 연결 리스트에 요소를 삽입하는 메소드
+    public static void insertStationList(int insIdx, String insName, int prevIdx) {
+        list[insIdx].name = insName;
+        list[insIdx].next = list[prevIdx].next;
+        list[prevIdx].next = insIdx;
+    }
+
     public static void main(String[] args) {
         // 초기 상태의 연결 리스트를 작성해 표시
         initStationList();
+        printStationList();
+
+        // 연결 리스트에 요소를 삽입하여 표시
+        insertStationList(5, "광명", 2);
         printStationList();
     }
 }
