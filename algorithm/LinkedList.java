@@ -53,6 +53,11 @@ public class LinkedList {
         list[prevIdx].next = insIdx;
     }
 
+    // 연결 리스트에서 요소를 제거하는 메소드
+    public static void deleteStationList(int delIdx, int prevIdx) {
+        list[prevIdx].next = list[delIdx].next;
+    }
+
     public static void main(String[] args) {
         // 초기 상태의 연결 리스트를 작성해 표시
         initStationList();
@@ -60,6 +65,10 @@ public class LinkedList {
 
         // 연결 리스트에 요소를 삽입하여 표시
         insertStationList(5, "광명", 2);
+        printStationList();
+
+        // 연결 리스트에서 요소를 제거하여 표시
+        deleteStationList(5, 2);
         printStationList();
     }
 }
