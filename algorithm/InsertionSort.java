@@ -1,4 +1,3 @@
-package algorithm;
 
 public class InsertionSort {
     public static void printArray(int[] a) {
@@ -20,8 +19,8 @@ public class InsertionSort {
         // 삽입 정렬로 오름차순 정렬
         for (ins = 1; ins < a.length; ins++) {
             temp = a[ins];
-            for (cmp = ins - 1; cmp >= 0; cmp--) {
-                if (a[cmp] < temp) {
+            for (cmp = ins - 1; cmp >= 0 && a[cmp] > temp; cmp--) {
+                if (a[cmp] > temp) {
                     a[cmp + 1] = a[cmp];
                 } else {
                     break;
