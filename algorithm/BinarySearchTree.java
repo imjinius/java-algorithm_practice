@@ -71,6 +71,19 @@ public class BinarySearchTree {
         }
     }
 
+    // 이진 탐색 트리를 논리적인 순서(깊이 우선 탐색)로 표시하는 메소드
+    public static void printLogicalBST(int currentIdx) {
+        if (currentIdx != -1) {
+            System.out.printf("tree[%d] : data = %d, left = %d, right = %d\n", currentIdx, tree[currentIdx].data,
+                    tree[currentIdx].left,
+                    tree[currentIdx].right);
+
+            // 재귀 호출 부분
+            printLogicalBST(tree[currentIdx].left);
+            printLogicalBST(tree[currentIdx].right);
+        }
+    }
+
     // 프로그램 실행의 시작점인 main 메소드
     public static void main(String[] args) {
         for (int i = 0; i < tree.length; i++) {
@@ -88,5 +101,9 @@ public class BinarySearchTree {
 
         // 물리적 위치 순서로 표시
         printPhysicalBST();
+
+        // 이진 탐색 트리를 논리적인 순서(깊이 우선 탐색)로 표시
+        System.out.println("------------------------------------------------");
+        printLogicalBST(rootIdx);
     }
 }
