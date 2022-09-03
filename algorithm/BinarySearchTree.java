@@ -84,6 +84,43 @@ public class BinarySearchTree {
         }
     }
 
+    // 이진 탐색 트리를 탐색하는 메소드
+    public static int searchBST(int x) {
+        int idx; // 찾은 요소의 인덱스
+        int currentIdx; // 현재 요소의 인덱스
+        idx = -1;
+        currentIdx = rootIdx;
+
+        while (currentIdx != -1) {
+            if (tree[currentIdx].data == x) {
+                idx = currentIdx;
+                break;
+            } else if (tree[currentIdx].data > x) {
+                currentIdx = tree[currentIdx].left;
+            } else {
+                currentIdx = tree[currentIdx].right;
+            }
+        }
+        return idx;
+    }
+
+    // 재귀 호출로 이진 탐색 트리를 탐색하는 메소드
+    public static int searchRecBST(int x, int currentIdx) {
+        if (currentIdx == -1) {
+            return -1;
+        } else {
+            if (tree[currentIdx].data == x) {
+                return currentIdx;
+            } else if (tree[currentIdx].data > x) {
+                // 재귀 호출 부분
+                return searchRecBST(x, tree[currentIdx].left);
+            } else {
+                // 재귀 호출 부분
+                return searchRecBST(x, tree[currentIdx].right);
+            }
+        }
+    }
+
     // 프로그램 실행의 시작점인 main 메소드
     public static void main(String[] args) {
         for (int i = 0; i < tree.length; i++) {
@@ -105,5 +142,15 @@ public class BinarySearchTree {
         // 이진 탐색 트리를 논리적인 순서(깊이 우선 탐색)로 표시
         System.out.println("------------------------------------------------");
         printLogicalBST(rootIdx);
+
+        // 이진 탐색 트리를 탐색
+        System.out.printf("data 값이 '5'일 때의 물리적 위치 탐색 결과 = tree[%d]\n", searchBST(5));
+        System.out.printf("data 값이 '8'일 때의 물리적 위치 탐색 결과 = tree[%d]\n", searchBST(8));
+
+        // 재귀 호출로 이진 탐색 트리를 탐색
+        System.out.println("-----------------------------------------");
+        System.out.printf("data 값이 '5'일 때의 물리적 위치 탐색 결과 = %d\n", searchRecBST(5, rootIdx));
+        System.out.printf("data 값이 '8'일 때의 물리적 위치 탐색 결과 = %d\n", searchRecBST(8, rootIdx));
+
     }
 }
